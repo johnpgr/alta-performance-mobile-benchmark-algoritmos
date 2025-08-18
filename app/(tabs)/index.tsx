@@ -221,40 +221,48 @@ export default function Algoritmos() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>⚡ Benchmark — Quick Sort x Merge Sort ⚡</Text>
-      <Text style={styles.subtitle}>
-        Comparando desempenho com {tamanho} registros de peixes 🐟
-      </Text>
+      <View style={styles.content}>
+        <Text style={styles.title}>⚡ Benchmark — Quick Sort x Merge Sort ⚡</Text>
+        <Text style={styles.subtitle}>
+          Comparando desempenho com {tamanho} registros de peixes 🐟
+        </Text>
 
-      <TouchableOpacity style={styles.button} onPress={rodarBenchmark}>
-        <Text style={styles.buttonText}>▶ Rodar Benchmark</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={rodarBenchmark}>
+          <Text style={styles.buttonText}>▶ Rodar Benchmark</Text>
+        </TouchableOpacity>
 
-      <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
-        {resultados.map((item, index) => (
-          <View key={index} style={[styles.card, index === 0 && styles.winner]}>
-            <Text style={styles.cardTitle}>
-              {index === 0 ? '🏆 ' : ''}{item.nome}
-            </Text>
-            <Text style={styles.textSmall}>{item.complexidade}</Text>
-            <View style={styles.metrics}>
-              <Text style={styles.metric}>Média: <Text style={styles.value}>{item.avg} ms</Text></Text>
-              <Text style={styles.metric}>Mín: <Text style={styles.value}>{item.min} ms</Text></Text>
-              <Text style={styles.metric}>Máx: <Text style={styles.value}>{item.max} ms</Text></Text>
+        <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
+          {resultados.map((item, index) => (
+            <View key={index} style={[styles.card, index === 0 && styles.winner]}>
+              <Text style={styles.cardTitle}>
+                {index === 0 ? '🏆 ' : ''}{item.nome}
+              </Text>
+              <Text style={styles.textSmall}>{item.complexidade}</Text>
+              <View style={styles.metrics}>
+                <Text style={styles.metric}>Média: <Text style={styles.value}>{item.avg} ms</Text></Text>
+                <Text style={styles.metric}>Mín: <Text style={styles.value}>{item.min} ms</Text></Text>
+                <Text style={styles.metric}>Máx: <Text style={styles.value}>{item.max} ms</Text></Text>
+              </View>
             </View>
-          </View>
-        ))}
-      </ScrollView>
+          ))}
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
 
 // ---------------------- Estilos ----------------------
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, backgroundColor: '#0f172a' },
-  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 4, textAlign: 'center', color: '#facc15' },
-  subtitle: { fontSize: 14, color: '#94a3b8', marginBottom: 16, textAlign: 'center' },
-  button: { backgroundColor: '#22c55e', padding: 14, borderRadius: 8, marginBottom: 16 },
+  container: { flex: 1, backgroundColor: '#0f172a' },
+  content: { padding: 16, paddingBottom: 32, gap: 24 },
+  title: { 
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#facc15',
+    textAlign: 'center',
+  },
+  subtitle: { fontSize: 14, color: '#94a3b8', textAlign: 'center' },
+  button: { backgroundColor: '#22c55e', padding: 14, borderRadius: 8, },
   buttonText: { color: '#fff', textAlign: 'center', fontWeight: 'bold', fontSize: 16 },
   card: { backgroundColor: '#1e293b', borderWidth: 1, borderColor: '#334155', padding: 14, borderRadius: 10, marginBottom: 12 },
   winner: { borderColor: '#22c55e', borderWidth: 2, backgroundColor: '#064e3b' },

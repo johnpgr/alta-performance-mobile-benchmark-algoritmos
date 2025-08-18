@@ -29,8 +29,15 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Benchmark Algoritmos',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="function" color={color} />,
+          title: 'Benchmark',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="chart.bar" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="visualizations"
+        options={{
+          title: 'Visualizações',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="play.circle" color={color} />,
         }}
       />
     </Tabs>
