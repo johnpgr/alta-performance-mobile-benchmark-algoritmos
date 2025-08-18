@@ -1,8 +1,8 @@
 import AlgorithmVisualizer from '@/components/AlgorithmVisualizer';
 import BarSortVisualizer from '@/components/BarSortVisualizer';
+import { SafeAreaView } from "@/components/ui/SafeAreaView";
 import React, { useState } from 'react';
 import {
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,

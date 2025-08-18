@@ -1,6 +1,6 @@
+import { SafeAreaView } from "@/components/ui/SafeAreaView";
 import React, { useState } from 'react';
 import {
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
