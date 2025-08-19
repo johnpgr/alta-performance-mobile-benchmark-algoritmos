@@ -3,6 +3,7 @@ import BarSortVisualizer from '@/components/BarSortVisualizer';
 import { SafeAreaView } from "@/components/ui/SafeAreaView";
 import React, { useState } from 'react';
 import {
+    Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -181,6 +182,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#0f172a',
+    paddingBottom: Platform.OS === "ios" ? 32 : 0,
   },
   content: {
     padding: 16,
